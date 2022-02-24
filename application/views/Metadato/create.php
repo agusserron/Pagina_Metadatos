@@ -8,12 +8,12 @@
 <html lang="es">
 <html>
     <head>
-    <LINK REL=StyleSheet HREF="css/testEstilo.css" TYPE="text/css" MEDIA=screen>
-    <script src="js/testFuncionalidad.js"> </script>
+    <LINK REL=StyleSheet TYPE="text/css" MEDIA=screen href="<?= base_url() ?>assets/css/testEstilo.css">
+    <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
 
 
 </head>
-<img src="img/logo.jpg">
+<img src="<?= base_url() ?>assets/img/logo.jpg">
 <h1>Formulario Metadatos</h1>
 
 

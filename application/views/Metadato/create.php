@@ -7,20 +7,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <html>
-    <head>
+<head>
     <LINK REL=StyleSheet TYPE="text/css" MEDIA=screen href="<?= base_url() ?>assets/css/testEstilo.css">
     <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
 
 
 </head>
-<img src="<?= base_url() ?>assets/img/logo.jpg">
 <h1>Formulario Metadatos</h1>
 
-
-
 <ul>
-<li><a class="active" href="test.php">Agregar</a></li>
-  <li><a class="active" href="busqueda.php">Busqueda</a></li>
+<li><a class="active" href="create">Agregar</a></li>
+  <li><a class="active" href="index">Busqueda</a></li>
   
 </ul>
 
@@ -171,3 +168,7 @@
     </div>
 </div>
 </form>
+
+</body>
+
+</html>

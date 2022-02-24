@@ -1,6 +1,6 @@
 
 body {
-    width: 1600px;
+    width: 600px;
     margin: 0 auto;
     background-color: #dddddc;
     padding: 0 200px 50px 50px;
@@ -29,7 +29,7 @@ h1{
     font-size: 30px;
     font-family:"Titillium Web"; 
     color: rgba(131, 157, 37, 0.796);
-    text-align: center;
+    text-align:left;
 }
 img{
     width: 250px;

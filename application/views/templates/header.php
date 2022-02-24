@@ -2,4 +2,9 @@
         <head>
                 <title>Formulario Metadatos</title>
         </head>
-        <body>
+<body>
+
+<img src="<?= base_url() ?>assets/img/logo.jpg">
+
+
+</body>

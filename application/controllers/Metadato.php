@@ -15,6 +15,8 @@ class Metadato extends CI_Controller {
                 $data['metadato'] = $this->metadatos_model->get_metadato();
                 $data['titulo'] = 'Titulo';
                 $data['descripcion'] = 'Descripcion';
+                $data['proposito'] = 'proposito';
+
 
                 $this->load->view('templates/header', $data);
                 $this->load->view('metadato/index', $data);
@@ -43,21 +45,20 @@ class Metadato extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $data['title'] = 'Crear nuevo metadato';
 
         $this->form_validation->set_rules('titulo', 'titulo', 'required');
         $this->form_validation->set_rules('descripcion', 'descripcion', 'required');
 
         if ($this->form_validation->run() === FALSE)
         {
-            $this->load->view('templates/header', $data);
+            $this->load->view('templates/header');
             $this->load->view('metadato/create');
             $this->load->view('templates/footer');
 
         }
         else
         {
-            $this->news_model->set_news();
+            $this->metadatos_model->set_metadato();
             $this->load->view('metadato/success');
         }
         }

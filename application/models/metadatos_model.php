@@ -5,6 +5,7 @@ class metadatos_model extends CI_Model {
         {
                 $this->load->database();
         }
+        
         public function get_metadato($slug = FALSE)
         {
                 if ($slug === FALSE)
@@ -16,6 +17,7 @@ class metadatos_model extends CI_Model {
                 $query = $this->db->get_where('metadato', array('slug' => $slug));
                 return $query->row_array();
         }
+        
         public function set_metadato()
         {
         $this->load->helper('url');
@@ -25,7 +27,8 @@ class metadatos_model extends CI_Model {
         $data = array(
         'titulo' => $this->input->post('titulo'),
         'slug' => $slug,
-        'descripcion' => $this->input->post('descripcion')
+        'descripcion' => $this->input->post('descripcion'),
+        'proposito' => $this->input->post('proposito'),
         );
 
         return $this->db->insert('metadato', $data);

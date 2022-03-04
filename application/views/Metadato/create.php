@@ -17,7 +17,7 @@
 
 <ul>
 <li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href="index">Busqueda</a></li>
+  <li><a class="active" href= "http://localhost/cod3/index.php/metadato">Busqueda</a></li>
   
 </ul>
 
@@ -56,12 +56,14 @@
        value="2018-07-22"
        min="1996-01-01" max="2060-12-31">
 </div>
+<div class="mb-3">
 <select class="form-select" aria-label="Default select example" id="estado">
   <option selected>Estado</option>
   <option value="1">Activo</option>
   <option value="2">Resultado intermedio</option>
   <option value="3">Obsoleto</option>
 </select>
+
 <select class="form-select" aria-label="Default select example" id="formato">
   <option selected>Formato</option>
   <option value="1">SHP</option>
@@ -83,12 +85,14 @@
   <option value="2">Inglés </option>
   <option value="3">Portugués </option>
 </select>
+</div>
 <div class="mb-3">
 <label for="descripcion" class="form-label">Última actualización</label>
 <input type="date" id="start" name="trip-start"
        value="2018-07-22"
        min="1996-01-01" max="2060-12-31">
 </div>
+<div class="mb-3">
 <select class="form-select" aria-label="Default select example"id="frecActualiazacion">
   <option selected>Frecuencia de actualización</option>
   <option value="1">Mensual</option>
@@ -96,6 +100,7 @@
   <option value="3">Desconocido</option>
   <option value="4">Según necesidad</option>
 </select>
+</div>
 
 
 <div class="mb-3">
@@ -106,7 +111,7 @@
     <label for="id" class="form-label">Disponible:</label>
     <input type="text" class="form-control" id="PalabrasClave">
 </div>
-
+<div class="mb-3">
 <select class="form-select" aria-label="Default select example"id="tipoRep">
   <option selected>Tipo de representación:</option>
   <option value="1">Vectorial</option>
@@ -128,6 +133,7 @@
   <option selected>Cobertura temporal</option>
   <option value="1">Completar</option>
 </select>
+</div>
 <div class="mb-3">
     <label for="id" class="form-label">Escala:</label>
     <input type="text" class="form-control" id="escala">
@@ -147,11 +153,12 @@
     <input type="text" class="form-control" id="restLegales">
 </div>
 
-</select>
+<div class="mb-3">
 <select class="form-select" aria-label="Default select example"id="norma">
   <option selected>Norma calidad metadatos</option>
   <option value="1">ISO 19115:2003/19139</option>
 </select>
+</div>
 
 
 <p>

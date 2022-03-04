@@ -4,6 +4,7 @@
 
 <?php echo form_open('metadato/create'); ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <html>
@@ -27,7 +28,7 @@
 
 <div class="mb-3">
   <label for="titulo" class="form-label">Título:</label>
-  <input type="text" class="form-control" id="titulo">
+  <input type="text" class="form-control" id="titulo"  value="<?php echo set_value('titulo'); ?>">
 </div>
 
 <div class="mb-3">
@@ -36,7 +37,7 @@
 </div>
 <div class="mb-3">
   <label for="descripcion" class="form-label">Descripción:</label>
-  <textarea class="form-control" id="descripcion" rows="3"></textarea>
+  <textarea class="form-control" id="descripcion" <?php echo set_value('descripcion'); ?> rows="3"></textarea>
 </div>
 <div class="mb-3">
   <label for="proposito" class="form-label">Propósito de generación:</label>
@@ -179,3 +180,6 @@
 </body>
 
 </html>
+
+
+<?php echo form_close(); ?>

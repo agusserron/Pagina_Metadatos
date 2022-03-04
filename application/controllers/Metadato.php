@@ -42,22 +42,26 @@ class Metadato extends CI_Controller {
 
         public function create()
         {
-        $this->load->helper('form');
+        $this->load->helper('form','url');
         $this->load->library('form_validation');
 
-
-        $this->form_validation->set_rules('titulo', 'titulo', 'required');
-        $this->form_validation->set_rules('descripcion', 'descripcion', 'required');
+        //validacion del formulario 
+       // $this->form_validation->set_rules('titulo','Título','required');
+        //$this->form_validation->set_rules('descripcion','Descripción','required');
+       // $this->form_validation->set_message('required', '%s es obligatorio.');
+           
 
         if ($this->form_validation->run() === FALSE)
         {
+           
             $this->load->view('templates/header');
             $this->load->view('metadato/create');
             $this->load->view('templates/footer');
 
         }
         else
-        {
+        { 
+            //paso la validacion 
             $this->metadatos_model->set_metadato();
             $this->load->view('metadato/success');
         }

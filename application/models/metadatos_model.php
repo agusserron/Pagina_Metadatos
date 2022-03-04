@@ -28,10 +28,9 @@ class metadatos_model extends CI_Model {
         'titulo' => $this->input->post('titulo'),
         'slug' => $slug,
         'descripcion' => $this->input->post('descripcion'),
-        'proposito' => $this->input->post('proposito'),
         );
 
-        return $this->db->insert('metadato', $data);
+        return $this->db->insert('Metadato', $data);
         }
 
     }

@@ -18,21 +18,12 @@ class metadatos_model extends CI_Model {
                 return $query->row_array();
         }
         
-        public function set_metadato()
+        public function set_metadato($data)
         {
-        $this->load->helper('url');
-        $this->load->library('form_validation');
-
-        $slug = url_title($this->input->post('titulo'), 'dash', TRUE);
-
-        $data = array(
-        'titulo' => $this->input->post('titulo'),
-        'slug' => $slug,
-        'descripcion' => $this->input->post('descripcion'),
-        );
-
-        return $this->db->insert('metadato', $data);
+         $this->db->insert('metadato', $data);
+         return;
         }
+
 
 
     }

@@ -21,6 +21,7 @@ class metadatos_model extends CI_Model {
         public function set_metadato()
         {
         $this->load->helper('url');
+        $this->load->library('form_validation');
 
         $slug = url_title($this->input->post('titulo'), 'dash', TRUE);
 
@@ -30,7 +31,8 @@ class metadatos_model extends CI_Model {
         'descripcion' => $this->input->post('descripcion'),
         );
 
-        return $this->db->insert('Metadato', $data);
+        return $this->db->insert('metadato', $data);
         }
+
 
     }

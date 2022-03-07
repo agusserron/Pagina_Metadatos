@@ -28,16 +28,16 @@
 
 <div class="mb-3">
   <label for="titulo" class="form-label">Título:</label>
-  <input type="text" class="form-control" id="titulo"  value="<?php echo set_value('titulo'); ?>">
+  <input type="text" class="form-control" id="titulo" >
 </div>
 
-<div class="mb-3">
+<!--<div class="mb-3">
     <label for="id" class="form-label">ID:</label>
     <input type="text" class="form-control" id="id">
-</div>
+</div>--> 
 <div class="mb-3">
   <label for="descripcion" class="form-label">Descripción:</label>
-  <textarea class="form-control" id="descripcion" <?php echo set_value('descripcion'); ?> rows="3"></textarea>
+  <textarea class="form-control" id="descripcion"  rows="3"></textarea>
 </div>
 <div class="mb-3">
   <label for="proposito" class="form-label">Propósito de generación:</label>
@@ -105,12 +105,12 @@
 
 
 <div class="mb-3">
-    <label for="id" class="form-label">Contacto del recurso:</label>
-    <input type="text" class="form-control" id="PalabrasClave">
+    <label for="contacto" class="form-label">Contacto del recurso:</label>
+    <input type="text" class="form-control" id="contacto">
 </div>
 <div class="mb-3">
-    <label for="id" class="form-label">Disponible:</label>
-    <input type="text" class="form-control" id="PalabrasClave">
+    <label for="diponible" class="form-label">Disponible:</label>
+    <input type="text" class="form-control" id="disponible">
 </div>
 <div class="mb-3">
 <select class="form-select" aria-label="Default select example"id="tipoRep">
@@ -142,7 +142,7 @@
 
 <p>
 <div class="mb-3">
-<label for="id" class="form-label">Ingresar tabla de campos:</label>
+<label for="tabla" class="form-label">Ingresar tabla de campos:</label>
 
     <input type="file" name="archivosubido">
   
@@ -150,7 +150,7 @@
 </div>
 
 <div class="mb-3">
-    <label for="id" class="form-label">Restricciones legales:</label>
+    <label for="restLegales" class="form-label">Restricciones legales:</label>
     <input type="text" class="form-control" id="restLegales">
 </div>
 
@@ -164,7 +164,7 @@
 
 <p>
 <div class="mb-3">
-<label for="id" class="form-label">Otro archivo:</label>
+<label for="archivo" class="form-label">Otro archivo:</label>
 
     <input type="file" name="archivosubido">
   
@@ -176,10 +176,11 @@
     </div>
 </div>
 </form>
-
+</form>
+<?php echo form_close(); ?>
 </body>
 
 </html>
 
 
-<?php echo form_close(); ?>
+

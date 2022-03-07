@@ -5,7 +5,8 @@ class Metadato extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('metadatos_model');
-                $this->load->helper('url_helper');
+                $this->load->helper('url_helper', 'form');
+                $this->load->library('form_validation');
         }
 
 
@@ -40,32 +41,31 @@ class Metadato extends CI_Controller {
             $this->load->view('templates/footer');
         }
 
-        public function create()
+      public function create()
         {
         $this->load->helper('form','url');
         $this->load->library('form_validation');
 
         //validacion del formulario 
-       // $this->form_validation->set_rules('titulo','Título','required');
-        //$this->form_validation->set_rules('descripcion','Descripción','required');
-       // $this->form_validation->set_message('required', '%s es obligatorio.');
-           
+       $this->form_validation->set_rules('titulo','Título','required');
+       $this->form_validation->set_rules('descripcion','Descripción','required');
+       $this->form_validation->set_message('required', '%s es obligatorio.');
+        
+      
 
-        if ($this->form_validation->run() === FALSE)
+       if ($this->form_validation->run() === FALSE)
         {
            
             $this->load->view('templates/header');
             $this->load->view('metadato/create');
             $this->load->view('templates/footer');
 
-        }
-        else
-        { 
+       }
+       else
+       { 
             //paso la validacion 
             $this->metadatos_model->set_metadato();
             $this->load->view('metadato/success');
-        }
-        }
-
-
+       }
     }
+}

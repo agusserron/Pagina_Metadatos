@@ -52,5 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['metadato/create'] = 'metadato/create';
 $route['metadato/(:any)'] = 'metadato/view/$1';
 $route['metadato'] = 'metadato';
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'metadato';
+//$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'metadato/create';

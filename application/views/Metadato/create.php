@@ -24,7 +24,7 @@
 
 <body>
 <div class="box-interna">
-<form action="formpost.php" method="post" onsubmit="return validar();"> 
+<!--<form action="formpost.php" method="post" onsubmit="return validar();"> --> 
 
 <div class="mb-3">
   <label for="titulo" class="form-label">Título:</label>
@@ -161,7 +161,6 @@
 </select>
 </div>
 
-
 <p>
 <div class="mb-3">
 <label for="archivo" class="form-label">Otro archivo:</label>
@@ -175,9 +174,11 @@
     <input class="btn" type="submit" value="Enviar">
     </div>
 </div>
-</form>
-</form>
+
+
 <?php echo form_close(); ?>
+</form>
+
 </body>
 
 </html>

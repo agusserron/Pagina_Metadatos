@@ -2,7 +2,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('metadato/create'); ?>
+
 
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
 </head>
 <h1>Formulario Metadatos</h1>
-
+<?php echo form_open('Metadato/create'); ?>
 <ul>
 <li><a class="active" href="create">Agregar</a></li>
   <li><a class="active" href= "http://localhost/cod3/index.php/metadato">Busqueda</a></li>
@@ -24,11 +24,12 @@
 
 <body>
 <div class="box-interna">
+
 <!--<form action="formpost.php" method="post" onsubmit="return validar();"> --> 
 
 <div class="mb-3">
   <label for="titulo" class="form-label">Título:</label>
-  <input type="text" class="form-control" id="titulo" >
+  <input type="text" class="form-control" id="titulo" name="titulo">
 </div>
 
 <!--<div class="mb-3">
@@ -37,19 +38,19 @@
 </div>--> 
 <div class="mb-3">
   <label for="descripcion" class="form-label">Descripción:</label>
-  <textarea class="form-control" id="descripcion"  rows="3"></textarea>
+  <textarea class="form-control" id="descripcion"  rows="3" name="descripcion"></textarea>
 </div>
 <div class="mb-3">
   <label for="proposito" class="form-label">Propósito de generación:</label>
-  <textarea class="form-control" id="proposito" rows="3"></textarea>
+  <textarea class="form-control" id="proposito" rows="3" name="proposito"></textarea>
 </div>
 <div class="mb-3">
     <label for="id" class="form-label">Palabras clave temáticas:</label>
-    <input type="text" class="form-control" id="PalabrasClaveT">
+    <input type="text" class="form-control" id="PalabrasClaveT" name="PalabrasClaveT">
 </div>
 <div class="mb-3">
     <label for="id" class="form-label">Palabras clave geográficas:</label>
-    <input type="text" class="form-control" id="PalabrasClaveG">
+    <input type="text" class="form-control" id="PalabrasClaveG" name="PalabrasClaveG">
 </div>
 <div class="mb-3">
 <label for="descripcion" class="form-label">Fecha de creación:</label>

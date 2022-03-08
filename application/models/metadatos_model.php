@@ -18,7 +18,7 @@ class metadatos_model extends CI_Model {
                 return $query->row_array();
         }
         
-        public function set_news()
+        public function set_metadato()
         {
         $this->load->helper('url');
 

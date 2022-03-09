@@ -50,7 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['metadato/create'] = 'metadato/create';
-$route['metadato/(:any)'] = 'metadato/view/$1';
+$route['metadato/form_login'] = 'metadato/index';
+$route['metadato/busqueda'] = 'metadato/view';
 $route['metadato'] = 'metadato';
 //$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'metadato/create';
+$route['default_controller'] = 'metadato/view/$1';

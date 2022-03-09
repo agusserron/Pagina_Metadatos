@@ -7,11 +7,9 @@
     <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
     </head>
 
-
-
-
 <body>
-<form action="formpost.php" method="post" onsubmit="return validar();"> 
+<?php echo form_open('metadato/busqueda'); ?>
+
 <h1>Formulario Metadatos</h1>
 
 <ul>
@@ -42,6 +40,7 @@
 <?php endforeach; ?>
 </div>
 
+<?php echo form_close(); ?>
 </form>
 </body>
 

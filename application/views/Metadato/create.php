@@ -2,9 +2,6 @@
 
 <?php echo validation_errors(); ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <html>
@@ -14,11 +11,12 @@
 
 
 </head>
+<?php echo form_open('metadato/create'); ?>
 <h1>Formulario Metadatos</h1>
-<?php echo form_open('Metadato/create'); ?>
+
 <ul>
 <li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href= "http://localhost/cod3/index.php/metadato">Busqueda</a></li>
+  <li><a class="active" href= "http://localhost/cod3/index.php/metadato/busqueda">Busqueda</a></li>
   
 </ul>
 

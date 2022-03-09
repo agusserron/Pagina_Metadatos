@@ -14,8 +14,7 @@ class Metadato extends CI_Controller {
         {
                 $this->load->helper('form','url');
                 $this->load->library('form_validation');
-       
-
+ 
                 if(!isset($_POST['usuario'])){   //   Si no recibimos ningún valor proveniente del formulario, significa que el usuario recién ingresa.   
                         $this->load->view('templates/header');
                         $this->load->view('metadato/form_login'); 
@@ -25,21 +24,24 @@ class Metadato extends CI_Controller {
                         $this->form_validation->set_rules('usuario','Usuario','required');      //   Configuramos las validaciones ayudandonos con la librería form_validation del Framework Codeigniter
                         $this->form_validation->set_rules('contraseña','Contraseña','required');
                         $this->form_validation->set_message('required', '%s es obligatorio.');
-                        if(($this->form_validation->run()==FALSE)){            //   Verificamos si el usuario superó la validación
-                                $this->load->view('templates/header');
+                        if(($this->form_validation->run()==FALSE)){   
+                                                                  //   Verificamos si el usuario superó la validación
+                                $this->load->view('templates/header');  //   En caso que no, volvemos a presentar la pantalla de login
                                 $this->load->view('metadato/form_login'); 
-                                $this->load->view('templates/footer');                     //   En caso que no, volvemos a presentar la pantalla de login
+                                $this->load->view('templates/footer');                     
                         }
                         else{                                       //   Si ambos campos fueron correctamente rellanados por el usuario,
                            $this->load->model('metadatos_model');
                            $ExisteUsuarioyPassoword=$this->metadatos_model->ValidarUsuario($_POST['usuario'],$_POST['contraseña']);   //   comprobamos que el usuario exista en la base de datos y la password ingresada sea correcta
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
+                                
                                 $this->load->view('templates/header');
                                 $this->load->view('metadato/create'); 
-                                $this->load->view('templates/footer');     //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
+                                $this->load->view('templates/footer'); 
+                                //$this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);    //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
                            }
                            else{   //   Si no logró validar
-                              $data['error']="E-mail o password incorrecta, por favor vuelva a intentar";
+                            $this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);  
                               $this->load->view('templates/header');
                               $this->load->view('metadato/form_login'); 
                               $this->load->view('templates/footer');  //   Lo regresamos a la pantalla de login y pasamos como parámetro el mensaje de error a presentar en pantalla
@@ -91,7 +93,9 @@ class Metadato extends CI_Controller {
        { 
             //paso la validacion 
             $this->metadatos_model->set_metadato();
+            $this->load->view('templates/header');
             $this->load->view('metadato/success');
+            $this->load->view('templates/footer');
        }
     }
 }

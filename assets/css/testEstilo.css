@@ -85,7 +85,7 @@ textarea{
     background: #ffffff;
     border-radius: 3px;
     box-shadow: 0 1px 1px #cac7c7;
-    position: relative;
+    position:static ;
     border: 100px solid #ffffff;
     border-radius: 1em;
     padding: 0 200px 150px 50px;

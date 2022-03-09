@@ -16,7 +16,7 @@
 
 <ul>
 <li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href= "http://localhost/cod3/index.php/metadato/busqueda">Busqueda</a></li>
+  <li><a class="active" href= "http://localhost/cod3/index.php/metadato">Busqueda</a></li>
   
 </ul>
 

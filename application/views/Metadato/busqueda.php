@@ -13,7 +13,7 @@
 <h1>Formulario Metadatos</h1>
 
 <ul>
-<li><a class="active" href="metadato/create">Agregar</a></li>
+<li><a class="active" href="create">Agregar</a></li>
   <li><a class="active" href="metadato">Busqueda</a></li>  
 </ul>
 

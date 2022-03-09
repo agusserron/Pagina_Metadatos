@@ -30,9 +30,12 @@
 
 
 <div class="mt-4">
-    <input class="btn" type="submit" value="Volver">
-    </div>
+<a class="btn" href="create" type="submit">Volver</a>
 </div>
+
+</div>
+
+
 
 </form>
 

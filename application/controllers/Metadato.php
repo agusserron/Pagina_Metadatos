@@ -12,6 +12,8 @@ class Metadato extends CI_Controller {
 
         public function index()
         {
+
+
                 $this->load->helper('form','url');
                 $this->load->library('form_validation');
  
@@ -35,9 +37,11 @@ class Metadato extends CI_Controller {
                            $ExisteUsuarioyPassoword=$this->metadatos_model->ValidarUsuario($_POST['usuario'],$_POST['contraseña']);   //   comprobamos que el usuario exista en la base de datos y la password ingresada sea correcta
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
                                 
-                                $this->load->view('templates/header');
-                                $this->load->view('metadato/create'); 
-                                $this->load->view('templates/footer'); 
+                                $data['metadato'] = $this->metadatos_model->get_metadato();
+
+                                $this->load->view('templates/header', $data);
+                                $this->load->view('metadato/busqueda', $data);
+                                $this->load->view('templates/footer');
                                 //$this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);    //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
                            }
                            else{   //   Si no logró validar
@@ -48,6 +52,9 @@ class Metadato extends CI_Controller {
                            }
                         }
                      }
+
+                    
+                    
         }
 
         //Mostrar DATOS 
@@ -62,12 +69,12 @@ class Metadato extends CI_Controller {
     
             $data['titulo'] = $data['metadato_item']['titulo'];
     
-            $this->load->view('templates/header', $data);
+            $this->load->view('templates/header');
             $this->load->view('metadatos/busqueda', $data);
             $this->load->view('templates/footer');
         }
 
-      public function create()
+         public function create()
         {
         
         $this->load->helper('form','url');

@@ -12,6 +12,10 @@
 <?php echo form_open('metadato/form_login'); ?>
 <h1>Formulario Metadatos</h1>
 
+<ul>
+<li><a class="active" href="http://localhost/cod3/index.php/metadato">Agregar</a></li>
+  <li><a class="active" href="http://localhost/cod3/index.php/metadato">Busqueda</a></li>  
+</ul>
 
 <body>
 <div class="box-interna">

@@ -104,5 +104,13 @@ class Metadato extends CI_Controller {
             $this->load->view('metadato/success');
             $this->load->view('templates/footer');
        }
-    }
+      }
+      public function busqueda(){
+        $data['metadato'] = $this->metadatos_model->get_metadato();
+        $this->load->view('templates/header');
+        $this->load->view('metadato/busqueda', $data);
+        $this->load->view('templates/footer');  
+      }
+
+    
 }

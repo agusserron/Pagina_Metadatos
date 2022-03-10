@@ -13,12 +13,9 @@
 <h1>Formulario Metadatos</h1>
 
 
-
-
-
 <ul>
-<li><a class="active" href="metadato/create">Agregar</a></li>
-  <li><a class="active" href="metadato">Busqueda</a></li>  
+<li><a class="active" >Agregar</a></li>
+  <li><a class="active" >Busqueda</a></li>  
 </ul>
 
 <body>

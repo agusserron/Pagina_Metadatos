@@ -7,6 +7,7 @@ class Metadato extends CI_Controller {
                 $this->load->model('metadatos_model');
                 $this->load->helper('url_helper', 'form');
                 $this->load->library('form_validation');
+                $this->load->library('pagination');
         }
 
 
@@ -16,6 +17,8 @@ class Metadato extends CI_Controller {
 
                 $this->load->helper('form','url');
                 $this->load->library('form_validation');
+                $this->load->library('pagination');
+               
  
                 if(!isset($_POST['usuario'])){   //   Si no recibimos ningún valor proveniente del formulario, significa que el usuario recién ingresa.   
                         $this->load->view('templates/header');
@@ -37,13 +40,28 @@ class Metadato extends CI_Controller {
                            $ExisteUsuarioyPassoword=$this->metadatos_model->ValidarUsuario($_POST['usuario'],$_POST['contraseña']);   //   comprobamos que el usuario exista en la base de datos y la password ingresada sea correcta
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
                                 
+                                $this->load->library('pagination');
+   
+
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
+                               
+                                $config['base_url'] = 'http://localhost/cod3/index.php/metadato/index';
+                                //$config['total_rows'] = $this->db->get('metadato')->$num_rows();
+                                $config['per_page'] =10;
+                                $config['num_links'] = 20;
+                        
+                                $this->pagination->initialize($config);
+                               // $data['records'] = $this->db->get('metadato', $config['per_page'], $this->url->segment(3) );
+                                $this->load->view('templates/header');
+                                $this->load->view('metadato/busqueda', $data);
+                                $this->load->view('templates/footer'); 
 
                                 $this->load->view('templates/header', $data);
                                 $this->load->view('metadato/busqueda', $data);
                                 $this->load->view('templates/footer');
                                 //$this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);    //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
                            }
+
                            else{   //   Si no logró validar
                             $this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);  
                               $this->load->view('templates/header');
@@ -106,10 +124,26 @@ class Metadato extends CI_Controller {
        }
       }
       public function busqueda(){
-        $data['metadato'] = $this->metadatos_model->get_metadato();
-        $this->load->view('templates/header');
-        $this->load->view('metadato/busqueda', $data);
-        $this->load->view('templates/footer');  
+        $this->load->library('pagination');
+        $this->load->helper('url');
+       $data['metadato'] = $this->metadatos_model->get_metadato();
+
+       $config['base_url'] = 'http://localhost/cod3/index.php/metadato/busqueda';
+        //$config['total_rows'] = $this->db->get('metadato')->$num_rows();
+         $config['per_page'] =10;
+          $config['num_links'] = 20;
+                        
+                                $this->pagination->initialize($config);
+                               // $data['records'] = $this->db->get('metadato', $config['per_page'], $this->url->segment(3) );
+                                $this->load->view('templates/header');
+                                $this->load->view('metadato/busqueda', $data);
+                                $this->load->view('templates/footer'); 
+
+      //  $this->load->view('templates/header');
+       // $this->load->view('metadato/busqueda', $data);
+       // $this->load->view('templates/footer');  
+
+        
       }
 
     

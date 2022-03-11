@@ -8,13 +8,15 @@
     </head>
 
 <body>
+
 <?php echo form_open('metadato/busqueda'); ?>
+
 
 <h1>Formulario Metadatos</h1>
 
 <ul>
 <li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href="metadato">Busqueda</a></li>  
+  <li><a class="active" href="busqueda">Busqueda</a></li>  
 </ul>
 
 <div class="box-interna">
@@ -41,7 +43,9 @@
 </div>
 
 <?php echo form_close(); ?>
+
 </form>
+<?php echo $this->pagination->create_links(); ?>
 </body>
 
 </html>

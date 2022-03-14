@@ -46,7 +46,7 @@ class Metadato extends CI_Controller {
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
                                
                                 $config['base_url'] = 'http://localhost/cod3/index.php/metadato/index';
-                                //$config['total_rows'] = $this->db->get('metadato')->$num_rows();
+                              //  $config['total_rows'] = $this->db->get('metadato')->$num_rows();
                                 $config['per_page'] =10;
                                 $config['num_links'] = 20;
                         
@@ -56,9 +56,9 @@ class Metadato extends CI_Controller {
                                 $this->load->view('metadato/busqueda', $data);
                                 $this->load->view('templates/footer'); 
 
-                                $this->load->view('templates/header', $data);
-                                $this->load->view('metadato/busqueda', $data);
-                                $this->load->view('templates/footer');
+                                //$this->load->view('templates/header', $data);
+                                //$this->load->view('metadato/busqueda', $data);
+                               // $this->load->view('templates/footer');
                                 //$this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);    //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
                            }
 
@@ -129,7 +129,7 @@ class Metadato extends CI_Controller {
        $data['metadato'] = $this->metadatos_model->get_metadato();
 
        $config['base_url'] = 'http://localhost/cod3/index.php/metadato/busqueda';
-        //$config['total_rows'] = $this->db->get('metadato')->$num_rows();
+       // $config['total_rows'] = $this->db->get('metadato')->$num_rows();
          $config['per_page'] =10;
           $config['num_links'] = 20;
                         

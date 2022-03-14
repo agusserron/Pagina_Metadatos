@@ -20,7 +20,7 @@
 </ul>
 
 <div class="box-interna">
-
+<div class="mb-3">
 <div class="form-label">
 <form action="#">
                 <input type="text"
@@ -30,16 +30,29 @@
                 <input class="btn" type="submit" value="Buscar">
  </form> 
  </div>
-
+ </div>
+ <table border="1" >
+		<tr>
+			<th>id</th>
+			<th>Título</th>
+			<th>Descripción</th>
+			<th>Palabras  Clave</th>
+			
+		</tr>
+<div class="mb-3">
 <?php foreach ($metadato as $metadato_item): ?>
-    <div class="mb-3">
-        <h3><?php echo $metadato_item['titulo']; ?></h3>
-        <div class="mb-3">
-                <?php echo $metadato_item['descripcion']; ?>
-                <a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Ver metadato</a>
-        </div>
-        </div>
+    <tr>
+        <td><?php echo $metadato_item['id']; ?></td>
+        <td><?php echo $metadato_item['titulo']; ?></td>
+        <td><?php echo $metadato_item['descripcion']; ?></td>
+        
+        <td> <?php echo $metadato_item['palabrasClaveT']; ?></td>
+        <td><a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Ver metadato</a></td>
+</tr>
+        
+</div>
 <?php endforeach; ?>
+</table>
 </div>
 
 <?php echo form_close(); ?>

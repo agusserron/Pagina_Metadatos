@@ -17,6 +17,16 @@ class metadatos_model extends CI_Model {
                 $query = $this->db->get_where('metadato', array('slug' => $slug));
                 return $query->row_array();
         }
+
+        function get_met($pagination, $segment) {
+
+                $this->db->order_by('id', 'asc');
+                $this->db->limit($pagination, $segment);
+                $query = $this->db->get('metadato')->result();
+            
+                return $query;
+            
+        }
         
         public function set_metadato()
         {

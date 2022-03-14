@@ -37,6 +37,7 @@
 			<th>Título</th>
 			<th>Descripción</th>
 			<th>Palabras  Clave</th>
+            <th>Acciones</th>
 			
 		</tr>
 <div class="mb-3">
@@ -47,18 +48,20 @@
         <td><?php echo $metadato_item['descripcion']; ?></td>
         
         <td> <?php echo $metadato_item['palabrasClaveT']; ?></td>
-        <td><a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Ver metadato</a></td>
+        <td><a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Ver</a> <a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Borrar</a></td>
 </tr>
         
 </div>
 <?php endforeach; ?>
 </table>
+<?php echo $this->pagination->create_links(); ?>
 </div>
+
 
 <?php echo form_close(); ?>
 
 </form>
-<?php echo $this->pagination->create_links(); ?>
+
 </body>
 
 </html>

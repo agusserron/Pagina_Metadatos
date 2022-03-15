@@ -186,13 +186,11 @@ background: rgba(131, 157, 37, 0.796);
         float:left;
         margin:7px;
     }
-
     table {
-        table-layout: fixed;
-        width: 100%;
-        border-collapse: collapse;
+        
+        
         border: 3px solid rgb(146, 141, 146);
-        width: 200px;
+        width: 600px;
       }
       thead th:nth-child(1) {
         width: 30%;
@@ -211,9 +209,9 @@ background: rgba(131, 157, 37, 0.796);
       }
       
      td {
-        padding: 20px;
-        width: 200px;
-        height:5px;
+         border-right: 1px solid #aaaa ;
+        padding: 1em;
+        
       }
       th {
         padding: 20px;
@@ -221,5 +219,20 @@ background: rgba(131, 157, 37, 0.796);
         height:10px;
         background-color: #d4d1d1;
       }
+
+      #pagination a, #pagination strong{
+          background: #cac7c7;
+          padding: 4px 7px;
+          text-decoration: none;
+          border: 1px solid #aaaa;
+          font-size: 13px;
+      }
+
+      #pagination strong, #pagination a:hover {
+          font-weight: normal;
+          background: #5a5959;
+
+      }
+      
 
     

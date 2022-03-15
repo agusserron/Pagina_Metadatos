@@ -18,15 +18,6 @@ class metadatos_model extends CI_Model {
                 return $query->row_array();
         }
 
-        function get_met($pagination, $segment) {
-
-                $this->db->order_by('id', 'asc');
-                $this->db->limit($pagination, $segment);
-                $query = $this->db->get('metadato')->result();
-            
-                return $query;
-            
-        }
         
         public function set_metadato()
         {

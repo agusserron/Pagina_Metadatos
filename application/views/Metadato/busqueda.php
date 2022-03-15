@@ -28,35 +28,18 @@
                     name="search">
                   
                 <input class="btn" type="submit" value="Buscar">
- </form> 
+ 
  </div>
  </div>
- <table border="1" >
-		<tr>
-			<th>id</th>
-			<th>Título</th>
-			<th>Descripción</th>
-			<th>Palabras  Clave</th>
-            <th>Acciones</th>
-			
-		</tr>
-<div class="mb-3">
-<?php foreach ($metadato as $metadato_item): ?>
-    <tr>
-        <td><?php echo $metadato_item['id']; ?></td>
-        <td><?php echo $metadato_item['titulo']; ?></td>
-        <td><?php echo $metadato_item['descripcion']; ?></td>
-        
-        <td> <?php echo $metadato_item['palabrasClaveT']; ?></td>
-        <td><a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Ver</a> <a href="<?php echo site_url('metadato/'.$metadato_item['slug']); ?>">Borrar</a></td>
-</tr>
-        
-</div>
-<?php endforeach; ?>
-</table>
+
+
+
+<?php echo $this->table->generate($records); ?>
+
+
 <?php echo $this->pagination->create_links(); ?>
 </div>
-
+</form> 
 
 <?php echo form_close(); ?>
 

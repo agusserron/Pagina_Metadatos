@@ -51,7 +51,7 @@ class Metadato extends CI_Controller {
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
                                
                                
-                                $config['base_url'] = 'http://localhost/cod3/index.php/metadato/form_login';
+                                $config['base_url'] = 'http://localhost/cod3/index.php/metadato/busqueda';
                                 $config['total_rows'] = $this->db->get('metadato')->num_rows();
                                 $config['per_page'] = 10;
                                 $config['num_links'] = 20;
@@ -59,8 +59,8 @@ class Metadato extends CI_Controller {
                         
                                 $this->pagination->initialize($config);
                                $data['records'] = $this->db->get('metadato', $config['per_page'], $this->uri->segment(3));
-                            
-                        
+                               
+                    
                                 $this->load->view('templates/header', $data);
                                 $this->load->view('metadato/busqueda', $data);
                                 $this->load->view('templates/footer', $data); 
@@ -134,8 +134,7 @@ class Metadato extends CI_Controller {
         $this->load->library('pagination');
         $this->load->helper('url');
         $this->load->library('table');
-       $data['metadato'] = $this->metadatos_model->get_metadato();
-     $this->table->set_heading('ID', 'Título');
+        //$this->table->set_heading('ID', 'Título');
 
        $config['base_url'] = 'http://localhost/cod3/index.php/metadato/busqueda';
                                 $config['total_rows'] = $this->db->get('metadato')->num_rows();
@@ -144,9 +143,10 @@ class Metadato extends CI_Controller {
                                
                         
                                 $this->pagination->initialize($config);
+                                $data['metadato'] = $this->metadatos_model->get_metadato();
                                 $data['records'] = $this->db->get('metadato', $config['per_page'], $this->uri->segment(3));
                                 
-                        
+                                
                         
                                 $this->load->view('templates/header', $data);
                                 $this->load->view('metadato/busqueda', $data);

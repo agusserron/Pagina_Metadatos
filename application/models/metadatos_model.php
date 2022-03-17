@@ -53,6 +53,24 @@ class metadatos_model extends CI_Model {
                 }
         }
 
+        function search($limit, $offset) {
+                // results query
+                $q = $this->db->select('id, titulo, slug, descripcion, palabrasClaveT')
+                     ->from('metadato')
+                     ->limit($limit, $offset);
+
+                $ret['rows'] = $q->get()->result();
+
+                // count query
+                $q = $this->db->select('COUNT(*) as count', FALSE)
+                        ->from('metadato');
+                $tmp = $q->get()->result();
+                $ret['num_rows'] = $tmp[0]->count;
+
+                return $ret;
+
+        }
+
 
         
 

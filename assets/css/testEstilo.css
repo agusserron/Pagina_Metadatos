@@ -220,19 +220,8 @@ background: rgba(131, 157, 37, 0.796);
         background-color: #d4d1d1;
       }
 
-      #pagination a, #pagination strong{
-          background: #cac7c7;
-          padding: 4px 7px;
-          text-decoration: none;
-          border: 1px solid #aaaa;
-          font-size: 13px;
-      }
+    
 
-      #pagination strong, #pagination a:hover {
-          font-weight: normal;
-          background: #5a5959;
-
-      }
       
 
     

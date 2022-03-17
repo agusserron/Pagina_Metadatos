@@ -219,8 +219,15 @@ background: rgba(131, 157, 37, 0.796);
         height:10px;
         background-color: #d4d1d1;
       }
-
-    
+     
+    #pagination a {
+        background: #cac7c7;
+        padding: 4px 7px;
+        text-decoration: none;
+        border: 1px solid rgb(180, 176, 176);
+        color: #0c0c0c;
+        font-size: 12px;
+    }
 
       
 

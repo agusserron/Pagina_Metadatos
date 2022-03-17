@@ -49,7 +49,7 @@ class Metadato extends CI_Controller {
    
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
                                
-                                $limit = 10;
+                                $limit = 3;
                                 $results = $this->metadatos_model->search($limit, $offset);
                                 $data['metadato'] = $results['rows'];
                                 $data['num_results'] = $results['num_rows'];
@@ -62,7 +62,7 @@ class Metadato extends CI_Controller {
                                 $config['base_url'] = site_url('metadato/busqueda');
                                 $config['total_rows'] = $results['num_rows'];
                                 $config['per_page'] = $limit;
-                                $config['uri_segment'] = 3;
+                                $config['uri_segment'] = 5;
                                 $this->pagination->initialize($config);
                                 $data['pagination'] = $this->pagination->create_links();
                         
@@ -149,7 +149,7 @@ class Metadato extends CI_Controller {
 
                         
                                 
-        $limit = 10;
+        $limit = 3;
         $results = $this->metadatos_model->search($limit, $offset);
         $data['metadato'] = $results['rows'];
         $data['num_results'] = $results['num_rows'];
@@ -162,7 +162,7 @@ class Metadato extends CI_Controller {
         $config['base_url'] = site_url('metadato/busqueda');
         $config['total_rows'] = $results['num_rows'];
         $config['per_page'] = $limit;
-        $config['uri_segment'] = 3;
+        $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
         $data['pagination'] = $this->pagination->create_links();
 

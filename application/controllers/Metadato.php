@@ -7,11 +7,12 @@ class Metadato extends CI_Controller {
                 $this->load->model('metadatos_model');
                 $this->load->helper('url_helper', 'form');
                 $this->load->library('form_validation');
+                $this->load->library('MY_Input');
               
         }
 
 
-        public function index($offset = 0)
+        public function index($query_id = 0, $offset = 0)
         {
 
 
@@ -19,6 +20,7 @@ class Metadato extends CI_Controller {
                 $this->load->library('form_validation');
                 $this->load->library('pagination');
                 $this->load->library('table');
+                $this->load->library('MY_Input');
          
                 
 
@@ -46,11 +48,17 @@ class Metadato extends CI_Controller {
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
                                 
                                 $this->load->library('pagination');
+                                $this->load->library('MY_Input');
    
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
                                
+                               $this->input->load_query($query_array);
+                                $query_array = array(
+                                 'titulo' => $this->input->get('titulo'));
+                                
+                                
                                 $limit = 10;
-                                $results = $this->metadatos_model->search($limit, $offset);
+                                $results = $this->metadatos_model->search($query_array, $limit, $offset);
                                 $data['metadato'] = $results['rows'];
                                 $data['num_results'] = $results['num_rows'];
 
@@ -72,8 +80,7 @@ class Metadato extends CI_Controller {
                     
                                
 
-                             
-                                //$this->metadatos_model->usuarioIncorrecto($ExisteUsuarioyPassoword);    //   Si el usuario ingresó datos de acceso válido, imprimos un mensaje de validación exitosa en pantalla
+                        
                            }
 
                            else{   //   Si no logró validar
@@ -106,7 +113,7 @@ class Metadato extends CI_Controller {
             $this->load->view('templates/footer');
         }
 
-         public function create()
+        public function create()
         {
         
         $this->load->helper('form','url');
@@ -137,20 +144,21 @@ class Metadato extends CI_Controller {
             $this->load->view('templates/footer');
        }
       }
-      public function busqueda($offset = 0){
+      
+      public function busqueda($query_id = 0,$offset = 0){
         
         $this->load->helper('url');
         $this->load->library('table');
         
-        //$this->table->set_heading('ID', 'Título');
-
-        $this->load->model('metadatos_model');
-
-
-                        
+  
+       
+        $this->load->model('metadatos_model');    
+       // $this->input->load_query($query_array);
+        $query_array = array(
+                'titulo' => $this->input->get('titulo'));   
                                 
         $limit = 10;
-        $results = $this->metadatos_model->search($limit, $offset);
+        $results = $this->metadatos_model->search($query_array, $limit, $offset);
         $data['metadato'] = $results['rows'];
         $data['num_results'] = $results['num_rows'];
 
@@ -166,14 +174,25 @@ class Metadato extends CI_Controller {
         $this->pagination->initialize($config);
         $data['pagination'] = $this->pagination->create_links();
 
+        
+
         $this->load->view('templates/header');
         $this->load->view('metadato/busqueda', $data);
         $this->load->view('templates/footer');
 
+      }
+
+     function search($query_id = 0){
+
+        $query_array = array(
+        'titulo' => $this->input->post('titulo'));
+         $query_id = $this->input->save_query($query_array);
+        redirect("metadato/index/$query_id");
+        redirect("metadato/busqueda/$query_id");
+
         
 
-
-      }
+     }
 
     
 }

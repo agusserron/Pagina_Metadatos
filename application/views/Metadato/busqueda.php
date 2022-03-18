@@ -20,19 +20,23 @@
 </ul>
 
 <div class="box-interna">
+
+
+
+<?php echo form_open('metadato/search'); ?>
 <div class="mb-3">
-<div class="form-label">
-<form action="#">
-                <input type="text"
-                    placeholder="Busqueda metadato"
-                    name="search">
-                  
-                <input class="btn" type="submit" value="Buscar">
+<?php echo form_label('titulo', 'titulo')?>
+<?php echo form_input('titulo', set_value('titulo'), 'id="titulo"' )?>
+
  
- </div>
- </div>
 
+ <div class="mt-4">
+ <?php echo form_submit('action', 'Search');?>
+</div>
+ 
 
+</div>
+ 
 <table border="1" >
 <thead>    
 		<tr>

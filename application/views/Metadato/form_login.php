@@ -9,7 +9,7 @@
 
 
 </head>
-<?php echo form_open('metadato/form_login'); ?>
+<?php echo form_open('metadato/index'); ?>
 
 <h1>Formulario Metadatos</h1>
 

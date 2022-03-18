@@ -67,7 +67,7 @@
 
 <?php if (strlen($pagination)):?>
     <div class="mb-3">
-    Paginas:<?php echo $pagination;?>
+    Paginas: <?php echo $pagination;?>
     </div>
 <?php endif;?>
 

@@ -157,7 +157,7 @@ class Metadato extends CI_Controller {
         $query_array = array(
                 'titulo' => $this->input->get('titulo'));   
                                 
-        $limit = 10;
+        //$limit = 10;
         $results = $this->metadatos_model->search($query_array, $limit, $offset);
         $data['metadato'] = $results['rows'];
         $data['num_results'] = $results['num_rows'];

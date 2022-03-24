@@ -13,8 +13,10 @@
 }   
 
 .black_bg {
-background-color: #343a40;
+/*background-color: black; */
+background-color: rgba(33,37,41);
 width: 100%;
+border-radius: 9px;
 } 
 
 
@@ -89,4 +91,26 @@ width: 100%;
   }
 
   /*============================================*/
+.main-cont {
+border-radius: 10px; padding-left: 50px; padding-right: 50px; background-color: white; height: 100%;
+}
 
+.bottom-rounded {
+  border-radius: 0 0 10px 10px; padding-left: 50px; padding-right: 50px; background-color: white; height: 100%;
+ }
+
+
+
+.main-cont-bk {
+  border-radius: 10px; padding-left: 50px; padding-right: 50px;
+  background-color: rgba(33,37,41);
+  }
+
+.top-main-cont {  
+  padding-left: 10%; padding-right: 50px; background-color: #dddddc; border: 3px solid rgb(180, 180, 180); 
+ 
+}  
+
+.bodyclass {  
+  padding-left: 50px; padding-right: 50px; background-color: #dddddc; border: 3px solid rgb(180, 180, 180); 
+}

@@ -24,12 +24,13 @@
 
 
 </head>
-<body>
+<body class="bodyclass">
 
-<!-- comienzo header -->
+<!-- comienzo header 
 
-<div class="main-cont" style="padding-left: 50px; padding-right: 50px; background-color: #dddddc; border: 3px solid rgb(180, 180, 180);">
+<div class="top-main-cont">-->
 
+<div class="bottom-rounded">
 <div class="container">
 	<div class="row">
     	<div class="col-md-12" style="background-color: white;">
@@ -40,9 +41,12 @@
 
 
 	</div>
-
+	</div>
 	</div>
 	
+
+
+	<div class="main-cont-bk">
 	<div class="container">
 	<div class="row">	
 	<div class="black_bg">
@@ -53,10 +57,12 @@
 </nav>
 <!-- end navbar -->
 </div>
-
+</div>
 </div>
 </div>
 <!--final header-->	
 
-	
+<!-- main container -->
+
+<div class="main-cont">
 

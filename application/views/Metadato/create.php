@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 
-<div class="container" style="padding-left: 50px; padding-right: 50px; background-color: white;">
+<div class="container">
     <div class="row">
     <div class="col-md-12">
 
@@ -176,7 +176,9 @@
 
 
 <?php echo form_close(); ?>
-
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+<p> &nbsp; </p>
 </div>
 </div>
     </div>

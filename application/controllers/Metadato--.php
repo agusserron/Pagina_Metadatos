@@ -1,8 +1,6 @@
 <?php
 class Metadato extends CI_Controller {
 
-
-
         public function __construct()
         {
                 parent::__construct();
@@ -12,7 +10,6 @@ class Metadato extends CI_Controller {
                 $this->load->library('MY_Input');
               
         }
-
 
 
         public function index($query_id = 0, $offset = 0)
@@ -50,14 +47,12 @@ class Metadato extends CI_Controller {
                            $ExisteUsuarioyPassoword=$this->metadatos_model->ValidarUsuario($_POST['usuario'],$_POST['contraseña']);   //   comprobamos que el usuario exista en la base de datos y la password ingresada sea correcta
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
                                 
-                               /*
-                               
                                 $this->load->library('pagination');
                                 $this->load->library('MY_Input');
    
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
                                
-                                $this->input->load_query($query_array);
+                               $this->input->load_query($query_array);
                                 $query_array = array(
                                  'titulo' => $this->input->get('titulo'));
                                 
@@ -82,7 +77,7 @@ class Metadato extends CI_Controller {
                                 $this->load->view('templates/header');
                                 $this->load->view('metadato/busqueda', $data);
                                 $this->load->view('templates/footer');
-                                        */
+                    
                                
 
                         
@@ -113,9 +108,9 @@ class Metadato extends CI_Controller {
     
             $data['titulo'] = $data['metadato_item']['titulo'];
     
-            $this->load->view('templates/nheader');
-            $this->load->view('metadatos/nbusqueda', $data);
-            $this->load->view('templates/nfooter');
+            $this->load->view('templates/header');
+            $this->load->view('metadatos/busqueda', $data);
+            $this->load->view('templates/footer');
         }
 
         public function create()
@@ -150,37 +145,35 @@ class Metadato extends CI_Controller {
        }
        }
       
-       public function busqueda(){
+       public function busqueda($query_id = 0,$offset = 0){
         
-              // Datatables Variables
-             $draw = intval($this->input->get("draw"));
-             $start = intval($this->input->get("start"));
-             $length = intval($this->input->get("length"));
-   
-   
-             $md = $this->metadatos_model->get_metadato();
-   
-             $data = array();
-   
-             foreach($md->result() as $r) {
-   
-                  $data[] = array(
-                       $r->titulo,
-                       $r->slug,
-                       $r->descripcion,
-                       $r->proposito,
-                       $r->palabrasClaveT,
-                       $r->palabrasClaveG
-                  );
-             }
-   
-             $output = array(
-                  "draw" => $draw,
-                    "recordsTotal" => $md->num_rows(),
-                    "recordsFiltered" => $md->num_rows(),
-                    "data" => $data
-               );
-               $data =  json_encode($output);
+        $this->load->helper('url');
+        $this->load->library('table');
+        
+  
+       
+        $this->load->model('metadatos_model');    
+       // $this->input->load_query($query_array);
+        $query_array = array(
+                'titulo' => $this->input->get('titulo'));   
+                                
+        $limit = 100000;
+        $results = $this->metadatos_model->search($query_array, $limit, $offset);
+        $data['metadato'] = $results['rows'];
+        $data['num_results'] = $results['num_rows'];
+
+        //PAGINATION
+        $this->load->library('pagination');
+
+        
+        $config = array();
+        $config['base_url'] = site_url('metadato/busqueda');
+        $config['total_rows'] = $results['num_rows'];
+        $config['per_page'] = $limit;
+        $config['uri_segment'] = 3;
+        $this->pagination->initialize($config);
+        $data['pagination'] = $this->pagination->create_links();
+
         
 
         $this->load->view('templates/header');

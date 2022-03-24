@@ -6,6 +6,8 @@ class metadatos_model extends CI_Model {
                 $this->load->database();
         }
         
+ 
+
         public function get_metadato($slug = FALSE)
         {
                 if ($slug === FALSE)

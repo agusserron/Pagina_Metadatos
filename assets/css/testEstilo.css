@@ -1,14 +1,4 @@
-
-
-body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: #dddddc;
-    padding: 0 1000px 50px 50px;
-    border: 3px solid rgb(180, 180, 180);  
-   
-}
-form {
+.formulario {
     /* Centrar el formulario en la página */
     margin: 80 auto;
     width: 1050px;
@@ -17,31 +7,26 @@ form {
     border-radius: 10px;
     
 }
-html{        
-    font-size: 10px; 
-    font-family:sans-serif; 
-    padding: 1em;
 
-       
-}
 
-h1{
+.theh1{
     margin: 30 auto;
     font-size: 30px;
     font-family:"Titillium Web"; 
     color: rgba(131, 157, 37, 0.796);
     text-align:center;
 }
-p{
+.losp {
     font-size: 20px;
     
 }
 
+/*
 img{
     width: 250px;
     padding: 1em;      
 }
-
+*/
 
 .form-label{ 
     font-size: 16px;
@@ -67,6 +52,7 @@ textarea{
     height: 5em;
   }
 
+  
 .form-select{
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;

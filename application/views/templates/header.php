@@ -1,10 +1,63 @@
-<html>
-        <head>
-                <title>Formulario Metadatos</title>
-        </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Metadatos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="contenido" name="description" />
+	<meta content="agus, norber" name="author" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">	
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+ <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
+ <link rel="stylesheet" type="text/css" href=" <?= base_url() ?>assets/css/estilo.css">
+
+
+
+</head>
 <body>
 
-<img src="<?= base_url() ?>assets/img/logo.jpg">
+<!-- comienzo header -->
+
+<div class="main-cont" style="padding-left: 50px; padding-right: 50px; background-color: #dddddc; border: 3px solid rgb(180, 180, 180);">
+
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12" style="background-color: white;">
+		<img src="<?= base_url() ?>assets/img/logo.jpg">
+		</div>
 
 
-</body>
+
+
+	</div>
+
+	</div>
+	
+	<div class="container">
+	<div class="row">	
+	<div class="black_bg">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="create">Agregar</a>
+  <a class="navbar-brand" href="busqueda">Busqueda</a>
+</nav>
+<!-- end navbar -->
+</div>
+
+</div>
+</div>
+<!--final header-->	
+
+	
+

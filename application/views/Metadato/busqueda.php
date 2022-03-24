@@ -1,85 +1,78 @@
+<div class="container" style="padding-left: 50px; padding-right: 50px; background-color: white;">
+    <div class="row">
+    <div class="col-md-12">
 
-<!DOCTYPE html>
-<html lang="es">
-<html>
-    <head>
-    <LINK REL=StyleSheet TYPE="text/css" MEDIA=screen href="<?= base_url() ?>assets/css/testEstilo.css">
-    <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
-    </head>
+    <div class="theh1">Listado de Metadatos</div>
 
-<body>
-
-<?php echo form_open('metadato/busqueda'); ?>
-
-
-<h1>Formulario Metadatos</h1>
-
-<ul>
-<li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href="busqueda">Busqueda</a></li>  
-</ul>
-
-<div class="box-interna">
+ <table id="metadatos-table" class="display">
+ <thead>
+ <tr><td>ID</td><td>T&iacute;tulo</td><td>Descripci&oacute;n</td><td>Palabras Clave</td><td>Acciones</td></tr>
+ </thead>
+ <tbody>
 
 
-
-<?php echo form_open('metadato/search'); ?>
-<div class="mb-3">
-<?php echo form_label('titulo', 'titulo')?>
-<?php echo form_input('titulo', set_value('titulo'), 'id="titulo"' )?>
-
- 
-
- <div class="mt-4">
- <?php echo form_submit('action', 'Search');?>
-</div>
- 
-
-</div>
- 
-<table border="1" >
-<thead>    
-		<tr>
-			<th>id</th>
-			<th>Título</th>
-			<th>Descripción</th>
-			<th>Palabras  Clave</th>
-            <th>Acciones</th>
-			
-		</tr>
-
-</thead>
-<div class="mb-3">
-<tbody>
-<?php foreach ($metadato as $metadato_item): ?>
+ <?php foreach ($metadato as $metadato_item): ?>
     <tr>
         <td><?php echo $metadato_item->id; ?></td>
         <td><?php echo $metadato_item->titulo; ?></td>
         <td><?php echo $metadato_item->descripcion; ?></td>       
-        <td> <?php echo  $metadato_item->palabrasClaveT; ?></td>
-        <td><a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>">Ver</a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>">Borrar</a></td>
-        
+        <td> <?php echo  $metadato_item->palabrasClaveT; ?>
+    
+        <div id="popup<?php echo $metadato_item->id; ?>" class="overlay">
+	<div class="popup">
+		<h2><?php echo $metadato_item->titulo; ?></h2>
+		<a class="close" href="#">×</a>
+		<div class="content">
+			<p align="left">
+            <?php echo $metadato_item->descripcion; ?><br />      
+            <?php echo  $metadato_item->palabrasClaveT; ?><br />
+            </p>
+		</div>
+	</div>
+    </div> 
+    
+    
+    </td>
+        <!--<td><a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-primary btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-primary btn-sm" title="Users" alt="Users">Borrar</button></a></td>-->
+        <td><a href="#popup<?php echo $metadato_item->id; ?>"><button type="submit" class="btn btn-success btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-danger btn-sm" title="Users" alt="Users">Borrar</button></a></td>
     </tr>
-      
-        
+ 
+
 
 <?php endforeach; ?>
 
-</tbody>
-</div>
-</table>
 
-<?php if (strlen($pagination)):?>
-    <div class="mb-3">
-    Paginas: <?php echo $pagination;?>
+
+ </tbody>
+ </table> 
+<p> &nbsp; </p>
     </div>
-<?php endif;?>
-
-</div>
-</form>
-<?php echo form_close(); ?>
+    </div>
+    </div>
 
 
-</body>
 
-</html>
+
+
+
+
+<!-- begin norberto datatables js load-->
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    /*
+    $('#metadatos-table').DataTable({
+        "ajax": {
+            url : "<?php echo site_url("listado") ?>",
+            type : 'GET'
+        },
+    });
+    */
+    $('#metadatos-table').DataTable();    
+
+});
+
+</script>
+
+<!-- end norberto datatables js load-->

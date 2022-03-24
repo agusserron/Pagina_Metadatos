@@ -1,3 +1,8 @@
-<em>&copy; Observatorio Ambiental Nacional, año 2022</em>
+
+
+
+
+<span class="copyr">&copy; Observatorio Ambiental Nacional, año <?php echo date("Y"); ?></span>
+</div> <!-- main container -->
         </body>
 </html>

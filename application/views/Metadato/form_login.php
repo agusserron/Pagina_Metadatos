@@ -1,25 +1,14 @@
-<?php echo validation_errors(); ?>
+<div class="container" style="padding-left: 50px; padding-right: 50px; background-color: white;">
+    <div class="row">
+    <div class="col-md-12">
 
-<!DOCTYPE html>
-<html lang="es">
-<html>
-<head>
-    <LINK REL=StyleSheet TYPE="text/css" MEDIA=screen href="<?= base_url() ?>assets/css/testEstilo.css">
-    <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
+    <div class="theh1">Formulario Metadatos</div>
 
 
-</head>
 <?php echo form_open('metadato/index'); ?>
 
-<h1>Formulario Metadatos</h1>
 
-<ul>
-<li><a class="active" href="http://localhost/cod3/index.php/metadato">Agregar</a></li>
-  <li><a class="active" href="http://localhost/cod3/index.php/metadato">Busqueda</a></li>  
-</ul>
 
-<body>
-<div class="box-interna">
 
 
 <div class="mb-3">
@@ -36,13 +25,13 @@
 
 
 <div class="mt-4">
-    <input class="btn" type="submit" value="Ingresar">
-    </div>
-</div>
+    <button type="submit" class="btn btn-dark">Ingresar</button>
+ </div>
 
 <?php echo form_close(); ?>
-</form>
-
-</body>
-
-</html>
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+</div>
+</div>
+</div>

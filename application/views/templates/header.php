@@ -19,7 +19,6 @@
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
- <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
  <link rel="stylesheet" type="text/css" href=" <?= base_url() ?>assets/css/estilo.css">
 
 

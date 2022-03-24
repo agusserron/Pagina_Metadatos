@@ -1,39 +1,21 @@
-
-
 <?php echo validation_errors(); ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<html>
-<head>
-    <LINK REL=StyleSheet TYPE="text/css" MEDIA=screen href="<?= base_url() ?>assets/css/testEstilo.css">
-    <script src="<?= base_url() ?>assets/js/testFuncionalidad.js"> </script>
+<div class="container" style="padding-left: 50px; padding-right: 50px; background-color: white;">
+    <div class="row">
+    <div class="col-md-12">
+
+    <div class="theh1">Formulario Metadatos</div>
 
 
-</head>
-<?php echo form_open('metadato/create'); ?>
-<h1>Formulario Metadatos</h1>
+    <?php echo form_open('metadato/create'); ?>
 
-<ul>
-<li><a class="active" href="create">Agregar</a></li>
-  <li><a class="active" href= "busqueda">Busqueda</a></li>
-  
-</ul>
-
-<body>
-<div class="box-interna">
-
-<!--<form action="formpost.php" method="post" onsubmit="return validar();"> --> 
 
 <div class="mb-3">
   <label for="titulo" class="form-label">Título:</label>
   <input type="text" class="form-control" id="titulo" name="titulo">
 </div>
 
-<!--<div class="mb-3">
-    <label for="id" class="form-label">ID:</label>
-    <input type="text" class="form-control" id="id">
-</div>--> 
+
 <div class="mb-3">
   <label for="descripcion" class="form-label">Descripción:</label>
   <textarea class="form-control" id="descripcion"  rows="3" name="descripcion"></textarea>
@@ -64,6 +46,8 @@
   <option value="3">Obsoleto</option>
 </select>
 
+<br />
+
 <select class="form-select" aria-label="Default select example" id="formato">
   <option selected>Formato</option>
   <option value="1">SHP</option>
@@ -73,11 +57,15 @@
   <option value="5">CSV</option>
 </select>
 
+<br />
+
 <select class="form-select" aria-label="Default select example"id="categoria">
   <option selected>Categoría</option>
   <option value="1">Geonetwork</option>
   <option value="2">Otra</option>
 </select>
+
+<br />
 
 <select class="form-select" aria-label="Default select example"id="idioma">
   <option selected>Idioma</option>
@@ -111,6 +99,9 @@
     <label for="diponible" class="form-label">Disponible:</label>
     <input type="text" class="form-control" id="disponible">
 </div>
+
+
+
 <div class="mb-3">
 <select class="form-select" aria-label="Default select example"id="tipoRep">
   <option selected>Tipo de representación:</option>
@@ -119,14 +110,21 @@
   <option value="3">Imágen</option>
   <option value="4">Tabla de texto</option>
 </select>
+
+<br />
+
 <select class="form-select" aria-label="Default select example"id="coordenadas">
   <option selected>Sistema de referencia de coordenadas:</option>
   <option value="1">UTM</option>
+
+  <br />
 
 </select>
 <select class="form-select" aria-label="Default select example"id="coberturaEspacial">
   <option selected>Cobertura espacial</option>
   <option value="1">Completar</option>
+
+  <br />
 
 </select>
 <select class="form-select" aria-label="Default select example"id="coberturaTemporal">
@@ -139,10 +137,10 @@
     <input type="text" class="form-control" id="escala">
 </div>
 
-<p>
+
 <div class="mb-3">
 <label for="tabla" class="form-label">Ingresar tabla de campos:</label>
-
+<p>
     <input type="file" name="archivosubido">
   
   </p>
@@ -160,27 +158,26 @@
 </select>
 </div>
 
-<p>
+
 <div class="mb-3">
 <label for="archivo" class="form-label">Otro archivo:</label>
-
+<p>
     <input type="file" name="archivosubido">
   
   </p>
 </div>
 
 <div class="mt-4">
-    <input class="btn" type="submit" value="Enviar">
+    <button type="submit" class="btn btn-dark">Enviar</button>
     </div>
-</div>
+
+    
+
 
 
 <?php echo form_close(); ?>
-</form>
 
-</body>
-
-</html>
-
-
+</div>
+</div>
+    </div>
 

@@ -42,25 +42,21 @@ class Metadato extends CI_Controller {
                                 $this->load->view('metadato/form_login'); 
                                 $this->load->view('templates/footer');                     
                         }
-                        else{                                       //   Si ambos campos fueron correctamente rellanados por el usuario,
+                        else{                                    
+                                   //   Si ambos campos fueron correctamente rellanados por el usuario,
                            $this->load->model('metadatos_model');
                            $ExisteUsuarioyPassoword=$this->metadatos_model->ValidarUsuario($_POST['usuario'],$_POST['contraseña']);   //   comprobamos que el usuario exista en la base de datos y la password ingresada sea correcta
+                           
                            if($ExisteUsuarioyPassoword){   // La variable $ExisteUsuarioyPassoword recibe valor TRUE si el usuario existe y FALSE en caso que no. Este valor lo determina el modelo.
                                 
-                                $this->load->library('pagination');
-                                $this->load->library('MY_Input');
    
                                 $data['metadato'] = $this->metadatos_model->get_metadato();
-                               
-                               //$this->input->load_query($query_array);
-                                $query_array = array(
-                                 'titulo' => $this->input->get('titulo'));
-                                
-                                
-                                $limit = 10;
-                                $results = $this->metadatos_model->search($query_array, $limit, $offset);
+
+
+                                $results = $this->metadatos_model->listado();
                                 $data['metadato'] = $results['rows'];
-                                $data['num_results'] = $results['num_rows'];
+
+
 
                        
                                 $this->load->view('templates/header');

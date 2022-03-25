@@ -81,6 +81,21 @@ class Metadato extends CI_Controller {
                     
         }
 
+
+                // delete metadato
+                public function delmeta(){
+
+                        $id=$this->input->get('id');
+                        $response=$this->metadatos_model->deleterecords($id);
+                                if($response==true){
+                                        echo "Data deleted successfully !";
+                                }else{
+                                echo "Error !";
+                                }
+                }
+
+
+        
         //Mostrar DATOS 
         public function view($slug = NULL)
         {

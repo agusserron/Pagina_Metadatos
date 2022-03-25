@@ -69,7 +69,12 @@ class metadatos_model extends CI_Model {
 
         }
 
-  
+        function deleterecords($id){
+                
+          $this->db->where("id", $id);
+          $this->db->delete("metadato");
+          return true;
+        } 
         
 
 }

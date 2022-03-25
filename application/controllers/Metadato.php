@@ -105,7 +105,20 @@ class Metadato extends CI_Controller {
             {
                     show_404();
             }
-    
+            
+
+                if ((isset($_GET['id'])) && ($_GET['id']>0) ) {
+                $id=$this->input->get('id');
+                $response=$this->metadatos_model->deleterecords($id);
+                    if($response==true){
+                            echo "Data deleted successfully !";
+                    }else{
+                    echo "Error !";
+                }
+
+
+
+
             $data['titulo'] = $data['metadato_item']['titulo'];
     
             $this->load->view('templates/header');

@@ -13,7 +13,7 @@
 
 <div class="mt-4">
 
-<button type="submit" class="btn btn-dark">Volver</button>
+<button type="submit" class="btn btn-success">Volver</button>
 
 </div>
 <p> &nbsp; </p>

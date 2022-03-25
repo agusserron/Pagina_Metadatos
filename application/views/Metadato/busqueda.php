@@ -34,7 +34,7 @@
     
     </td>
         
-        <td><a href="#popup<?php echo $metadato_item->id; ?>"><button type="submit" class="btn btn-success btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-danger btn-sm" title="Users" alt="Users">Borrar</button></a></td>
+        <td><a href="#popup<?php echo $metadato_item->id; ?>"><button type="submit" class="btn btn-success btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-danger btn-sm" title="Users" alt="Users" onclick="return confirm('Est&aacute; a punto de eliminar el registro &quot;<?php echo $metadato_item->titulo; ?>&quot; - Est&aacute; seguro?')">Borrar</button></a></td>
     </tr>
  
 

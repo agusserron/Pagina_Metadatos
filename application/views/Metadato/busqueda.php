@@ -24,8 +24,8 @@
 		<a class="close" href="#">×</a>
 		<div class="content">
 			<p align="left">
-            <?php echo $metadato_item->descripcion; ?><br />      
-            <?php echo  $metadato_item->palabrasClaveT; ?><br />
+            <?php echo "<strong>Descripci&oacute;n: </strong><br />".$metadato_item->descripcion; ?><br />      
+            <?php echo "<strong>Palabras Clave: </strong><br />".$metadato_item->palabrasClaveT; ?><br />
             </p>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
     
     
     </td>
-        <!--<td><a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-primary btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-primary btn-sm" title="Users" alt="Users">Borrar</button></a></td>-->
+        
         <td><a href="#popup<?php echo $metadato_item->id; ?>"><button type="submit" class="btn btn-success btn-sm" title="Users" alt="Users">Ver</button></a> <a href="<?php echo site_url('metadato/'.$metadato_item->slug); ?>"><button type="submit" class="btn btn-danger btn-sm" title="Users" alt="Users">Borrar</button></a></td>
     </tr>
  
@@ -61,17 +61,27 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-    /*
+    $('#metadatos-table').DataTable( {
+        "order": [[ 0, "desc" ]],
+        "columnDefs": [ {"targets": 4, "orderable": false } ]
+    } );
+});
+
+/*
+//version via json
+$(document).ready(function() {
     $('#metadatos-table').DataTable({
         "ajax": {
             url : "<?php echo site_url("listado") ?>",
             type : 'GET'
         },
     });
-    */
-    $('#metadatos-table').DataTable();    
-
 });
+*/
+
+
+
+
 
 </script>
 

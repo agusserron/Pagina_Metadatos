@@ -157,24 +157,13 @@ class Metadato extends CI_Controller {
         $query_array = array(
                 'titulo' => $this->input->get('titulo'));   
                                 
-        //$limit = 10;
+        $limit = 10;
         $results = $this->metadatos_model->search($query_array, $limit, $offset);
+        
         $data['metadato'] = $results['rows'];
         $data['num_results'] = $results['num_rows'];
 
-        //PAGINATION
-        $this->load->library('pagination');
-
-        
-        $config = array();
-        $config['base_url'] = site_url('metadato/busqueda');
-        $config['total_rows'] = $results['num_rows'];
-        $config['per_page'] = $limit;
-        $config['uri_segment'] = 2;
-        $this->pagination->initialize($config);
-        $data['pagination'] = $this->pagination->create_links();
-
-        
+     
 
         $this->load->view('templates/header');
         $this->load->view('metadato/busqueda', $data);
@@ -182,14 +171,5 @@ class Metadato extends CI_Controller {
 
       }
 
-     function search($query_id = 0){
 
-        $query_array = array('titulo' => $this->input->post('titulo'));
-         $query_id = $this->input->save_query($query_array);
-        redirect("metadato/index/$query_id");
-        redirect("metadato/busqueda/$query_id");     
-
-     }
-
-    
 }

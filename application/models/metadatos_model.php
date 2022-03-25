@@ -13,6 +13,7 @@ class metadatos_model extends CI_Model {
                 if ($slug === FALSE)
                 {
                         $query = $this->db->get('metadato');
+                        
                         return $query->result_array();
                 }
         
@@ -57,9 +58,16 @@ class metadatos_model extends CI_Model {
 
         function search($query_array, $limit, $offset) {
                 // results query
+
+/*
                 $q = $this->db->select('id, titulo, slug, descripcion, palabrasClaveT')
                      ->from('metadato')
                      ->limit($limit, $offset);
+*/
+
+                $q = $this->db->select('*')->from('metadato');
+                $q->order_by('id', 'DESC');
+
 
                 if(strlen($query_array['titulo'])) {
                         $q->like('titulo', $query_array['titulo']);
@@ -80,10 +88,10 @@ class metadatos_model extends CI_Model {
 
                 return $ret;
 
+
         }
 
-
-        
+  
         
 
 }
